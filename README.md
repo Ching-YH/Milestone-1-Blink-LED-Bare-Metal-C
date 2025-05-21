@@ -19,5 +19,29 @@ Step 5 : Name Project (e.g., "Blinky") and click Finish.
 Step 6 : Initialize Peripherals: Click Yes when prompted to initialize peripherals to default mode. This opens the configuration tool.
 Step 7 : Configure LED Pin: Find Port A Pin5 on the chip diagram and set it to GPIO_Output.
 Step 8 : Generate Code: Click the "Save" icon (or Project > Generate Code).
-Step 9 : Add Blink Logic: In main.c, inside the while(1) loop, add: xxxx
+Step 9 : Add Blink Logic: In main.c, inside the while(1) loop, add:
+
+GPIOA->ODR |= 0x00000020; // Turn ON LED PA5
+	  	  HAL_Delay(100);
+	  	  GPIOA->ODR &= ~(0x00000020); // Turn OFF LED PA5
+	  	  HAL_Delay(100);
+	  	  GPIOA->ODR |= 0x00000020; // Turn ON LED PA5
+	  	  HAL_Delay(100);
+	  	  GPIOA->ODR &= ~(0x00000020); // Turn OFF LED PA5
+	  	  HAL_Delay(100);
+	  	  GPIOA->ODR |= 0x00000020; // Turn ON LED PA5
+	  	  HAL_Delay(100);
+	  	  GPIOA->ODR &= ~(0x00000020); // Turn OFF LED PA5
+	  	  HAL_Delay(100);
+	  	  //blink 1time, on 1s and off 1s
+	  	  GPIOA->ODR |= 0x00000020; // Turn ON LED PA5
+	  	  HAL_Delay(1000);
+	  	  GPIOA->ODR &= ~(0x00000020); // Turn OFF LED PA5
+	  	  HAL_Delay(1000);
+
+
+
+
+
+
 Step 10 : Build & Run: Click the "Build" (hammer) icon, then the "Debug" (green bug) icon, and finally "Resume" (green play) in the debug view.
