@@ -35,4 +35,4 @@ GPIOA->ODR |= 0x00000020; // Turn ON LED PA5
 
 Step 10 : Build & Run: Click the "Build" (hammer) icon, then the "Debug" (green bug) icon, and finally "Resume" (green play) in the debug view.
 
-Youtube link : 
+Youtube link : https://youtu.be/ObSKpKQ-dNY
